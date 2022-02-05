@@ -1,1 +1,1 @@
-# Kliq-ReactNative
+# Kliq.Club-ReactNative

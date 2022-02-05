@@ -2,7 +2,7 @@
 Kliq gives creators and their communities a mobile first platform to create their own digital economy and grow together.
 
 
-[![N|Solid](https://polygon.macaronswap.finance/images/powered-by-polygon.png )](http://kliq.club)
+[![N|Solid](https://web3.ethglobal.com/assets/images/powered.svg)](http://kliq.club)
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 

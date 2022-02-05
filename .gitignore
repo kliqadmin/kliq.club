@@ -17,4 +17,5 @@ build/Release
 # Dependency directories
 node_modules/
 jspm_packages/
-kliq-admin/.env
+/.env
+*.env

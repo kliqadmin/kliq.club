@@ -3,7 +3,7 @@ import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 
 import Tabs from './tabs';
-import ConnectWallet from '../screens/ConnectWallet';
+import ConnectWallet from '../screens/Connect';
 
 const Stack = createStackNavigator();
 

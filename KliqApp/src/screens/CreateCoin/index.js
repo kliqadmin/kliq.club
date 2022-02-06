@@ -3,16 +3,10 @@ import {
   View,
   Text,
   SafeAreaView,
-  Pressable,
-  Image,
   TextInput,
 } from 'react-native';
 import {useWalletConnect} from 'react-native-walletconnect';
-import Modal from 'react-native-modal';
-import GradientText from '../../components/Common/GrText';
 import {ImageButton} from '../../components/Common/ImageButton';
-import {SocialConnectButton} from '../../components/Connect/Button';
-import {FONTS, images} from '../../constants';
 import {styles} from './styles';
 
 const CreateCoin = ({navigation}) => {
@@ -144,7 +138,7 @@ const CreateCoin = ({navigation}) => {
           </View>
         </View>
         <View style={styles.idTextInputContainer}>
-          <Text style={styles.inputTitle}>Your Kliq wallet id</Text>
+          <Text style={styles.inputTitle}>Make your unique URL</Text>
           <View style={styles.inputWrapper}>
             <TextInput
               placeholder="Email"
@@ -163,7 +157,10 @@ const CreateCoin = ({navigation}) => {
         </View>
         <View style={styles.doneBtnWrapper}>
           <View style={styles.doneBtnContainer}>
-            <ImageButton title={'done'} />
+            <ImageButton
+              title={'done'}
+              onPressNext={() => navigation.replace('Home')}
+            />
           </View>
         </View>
       </View>

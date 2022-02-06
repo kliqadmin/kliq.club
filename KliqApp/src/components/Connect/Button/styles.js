@@ -7,7 +7,7 @@ import {COLORS} from '../../../constants';
 export default SocialConnectBtnStyles = StyleSheet.create({
   baseBtn: {
     backgroundColor: COLORS.btnBG,
-    width: '95%',
+    width: '90%',
     height: 50,
     borderRadius: 4,
   },
@@ -29,7 +29,7 @@ export default SocialConnectBtnStyles = StyleSheet.create({
     height: 20,
   },
   imgMain: {
-    marginLeft: 35,
+    marginLeft: 25,
   },
   blankSpace: {
     width: 20,

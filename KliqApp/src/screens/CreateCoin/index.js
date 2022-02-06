@@ -26,7 +26,7 @@ const CreateCoin = ({route, navigation}) => {
   const [instaCancel, setinstaCancel] = useState(false);
   const [proceedSelected, setproceedSelected] = useState(false);
 
-  const [userUID, setuserUID] = useState('CRA54321');
+  const [userUID, setuserUID] = useState('https://kliq-fan-page.vercel.app/C43521');
   const [userEmail, setuserEmail] = useState('creator@gmail.com');
 
   console.log('routerouteroute', route.params.account);

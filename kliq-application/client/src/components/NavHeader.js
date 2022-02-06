@@ -7,6 +7,7 @@ import {
   Navbar,
   Nav,
 } from "react-bootstrap";
+import Image from 'react-bootstrap/Image'
 import { LinkContainer } from "react-router-bootstrap";
 
 class NavHeader extends Component {
@@ -23,7 +24,7 @@ class NavHeader extends Component {
     let formattedAddress;
     if (!this.props.connectedWallet) {
       walletButton = (
-        <Button variant="primary" onClick={this.props.onWalletConnectClick}>
+        <Button variant="outline-dark" onClick={this.props.onWalletConnectClick}>
           Connect Wallet
         </Button>
       );
@@ -34,9 +35,9 @@ class NavHeader extends Component {
         this.props.connectedWallet.substring(39);
       walletButton = (
         <Dropdown as={ButtonGroup}>
-          <Button variant="success">{formattedAddress}</Button>
+          <Button variant="outline-dark">{formattedAddress}</Button>
 
-          <Dropdown.Toggle split variant="success" id="dropdown-split-basic" />
+          <Dropdown.Toggle split variant="outline-dark" id="dropdown-split-basic" />
 
           <Dropdown.Menu>
             <Dropdown.Item onClick={this.props.onDisconnectWallet}>
@@ -50,16 +51,17 @@ class NavHeader extends Component {
       <Navbar bg="dark" variant="dark">
         <Container>
           <LinkContainer to="/">
-            <Navbar.Brand>Kliq</Navbar.Brand>
+            {/* <Navbar.Brand>Kliq</Navbar.Brand> */}
+            <Image src={require('../kliq.png')}/>
           </LinkContainer>
-          <Nav className="mr-auto">
+          {/* <Nav className="mr-auto">
             <LinkContainer to="/fan">
               <Nav.Link>Fan</Nav.Link>
             </LinkContainer>
             <LinkContainer to="/creator">
               <Nav.Link>Creator</Nav.Link>
             </LinkContainer>
-          </Nav>
+          </Nav> */}
           <Nav className="ml-auto mr-2"></Nav>
           <Nav className="justify-content-end">{walletButton}</Nav>
         </Container>

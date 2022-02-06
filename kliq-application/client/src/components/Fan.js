@@ -127,7 +127,7 @@ class Fan extends Component {
     if (!this.props.connectedWallet) {
       button = (
         <Button
-          variant="primary"
+          variant="outline-dark"
           size="lg"
           block
           type="button"
@@ -143,7 +143,7 @@ class Fan extends Component {
         !this.isValidAmount(this.state.amountValue)
       button = (
         <Button
-          variant="success"
+          className='outline-kbtn'
           size="lg"
           block
           type="submit"

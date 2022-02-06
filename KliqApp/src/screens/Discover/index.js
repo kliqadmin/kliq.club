@@ -62,6 +62,14 @@ const Discover = ({ navigation }) => {
             <Text style={DiscoverStyles.desc}>{'TOTAL KLIQ COINS'}</Text>
           </View>
         </View>
+        <View style={{flexDirection: 'row', justifyContent: 'center', width: '100%', marginBottom: 10}}>
+            <TouchableOpacity style={DiscoverStyles.receivedBtn}>
+              <Text style={DiscoverStyles.yieldLbl}>YIELD</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={DiscoverStyles.yieldBtn} onPress={() => navigation.navigate('Transactions')}>
+              <Text style={DiscoverStyles.receivedLbl}>RECEIVED</Text>
+            </TouchableOpacity>
+        </View>
         <CoinLineChart />
     </SafeAreaView>
   );

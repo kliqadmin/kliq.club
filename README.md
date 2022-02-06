@@ -1,5 +1,5 @@
 # kliq.club
-Kliq gives creators and their communities a mobile first platform to create their own digital economy and grow together. Kliq has no costs involved, doesn't require any crypto knowledge, and works flawlessly on mobile. Creators and their communities may cooperate in ways they never imagined possible with kliq, resulting in deeper, more meaningful connections.
+Kliq gives creators and their communities a mobile first platform to create their own digital economy and grow together. As a creator, you can create your kliq account and start receiving funds. You will earn yields for the funds as well as free kliq tokens to be shared with the community. Kliq has no costs involved, doesn't require any crypto knowledge, and works flawlessly on mobile. Creators and their communities may cooperate in ways they never imagined possible with kliq, resulting in deeper, more meaningful connections.
 
 # Background
 Web3 creates network effects say it is ENS community, NFT communities or DAOs. It creates borderless communities and allows inclusiveness in its structure. If you leave Instagram, Twitter or Tiktok today, you are going to leave your whole network of followers with the platform. Web3 changes this to take your network forward even if you want to leave the platform. We have built a solution to onboard web2 users into the web3 world without much hassle. 

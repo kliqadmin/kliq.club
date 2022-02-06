@@ -193,7 +193,7 @@ const ConnectWallet = ({navigation}) => {
               width={'50%'}
             />
             <Text style={styles.modelLblTop}>
-              Hi “Name” , “AppName” is requesting to do the following
+              Hi Harie Venad , Kliq-club is requesting to do the following
             </Text>
             <Text style={styles.modelLblToptitle}>
               Access your Profile & Media
@@ -204,7 +204,7 @@ const ConnectWallet = ({navigation}) => {
             </Text>
             <View style={{flexDirection: 'row'}}>
               <Button
-                title="Hide modal"
+                title="Cancel"
                 onPress={() => toggleModal(undefined, 'cancel')}
               />
               <Button

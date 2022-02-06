@@ -76,7 +76,7 @@ const Discover = ({ navigation }) => {
           <Text style={DiscoverStyles.ethLbl}>20.12 ETH</Text>
           <View style={{ flexDirection: 'row', alignItems: 'flex-end' }}>
             <GradientText style={DiscoverStyles.totalAmount}>21,212</GradientText>
-            <Text style={DiscoverStyles.desc}>{'TOTAL KLIQ COINS'}</Text>
+            <Text style={DiscoverStyles.desc}>{'KLIQ COIN'}</Text>
           </View>
         </View>
         <View style={{flexDirection: 'row', justifyContent: 'center', width: '100%', marginBottom: 10}}>

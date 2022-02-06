@@ -37,17 +37,18 @@ When your community holds kliq coin or your NFTs, provide them access to special
 
 # What is accomplished till now?
 ***
-> Smart contract strategy deployment with one DEX 
-> Backend to receive data from the mobile app & interact with polygon chain
-> Mobile app for the creators
-> Handling kliq coing generation and distribution strategy partially
+* Smart contract strategy deployment with one DEX 
+* Backend to receive data from the mobile app & interact with polygon chain
+* Mobile app for the creators
+* Handling kliq coing generation and distribution strategy partially
 
 # The future
 ***
-> Adding multiple DEX for LP farming/Dual farming with optimised & guaranteed yield generation
-> Adding security layer on chain interaction & code audit
-> Handling kliq coin generation and distribute it to generate more yield
-> Handling liquidity when the number of creators grows in the network
+* Adding multiple DEX for LP farming/Dual farming with optimised & guaranteed yield generation
+* Adding security layer on chain interaction & code audit
+* Handling kliq coin generation and distribute it to generate more yield
+* Handling liquidity when the number of creators grows in the network
+* Improve UI/UX for creators and followers
 
 
 # Credits

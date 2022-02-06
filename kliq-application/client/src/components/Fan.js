@@ -10,7 +10,7 @@ class Fan extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      creatorAddress: '0x6C6548106f70F38cc94581d78298BD4F61B3b32d',
+      creatorAddress: '0x559443063737ED53dE5Fc8dC03752A99d607d7F7',
       amountValue: 0,
       sentTransactionHash: '',
       transactionModalState: TransactionModalState.HIDDEN,

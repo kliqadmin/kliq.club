@@ -26,7 +26,8 @@ export const DiscoverStyles = StyleSheet.create({
   },
   ethLbl: {
     color: COLORS.textGray,
-    marginStart: 10
+    marginStart: 10,
+    fontWeight: '500'
   },
   currencySym: {
     color: COLORS.white,

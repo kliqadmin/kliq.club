@@ -9,22 +9,31 @@ import {useWalletConnect} from 'react-native-walletconnect';
 import {ImageButton} from '../../components/Common/ImageButton';
 import {styles} from './styles';
 
-const CreateCoin = ({navigation}) => {
+const CreateCoin = ({route, navigation}) => {
   const {createSession, killSession, session, signTransaction} =
     useWalletConnect();
+
   const hasWallet = !!session.length;
   const [isBtnDisabled, setIsBtnDisabled] = useState(true);
   const [selectedIndex, setSelectedIndex] = useState(undefined);
   const [selectedMedia, setSelectedMedia] = useState(undefined);
+
   const [isModalVisible, setModalVisible] = useState(false);
   const [onlyFanCancel, setonlyFanCancel] = useState(false);
   const [youtubeCancel, setyoutubeCancel] = useState(false);
+
   const [twitterCancel, settwitterCancel] = useState(false);
   const [instaCancel, setinstaCancel] = useState(false);
   const [proceedSelected, setproceedSelected] = useState(false);
+
+  const [userUID, setuserUID] = useState('CRA54321');
+  const [userEmail, setuserEmail] = useState('creator@gmail.com');
+
+  console.log('routerouteroute', route.params.account);
+
   useEffect(() => {
     const unsubscribe = navigation.addListener('focus', () => {
-      console.log('HasssssWaallettt', hasWallet);
+      // console.log('hasWallet', hasWallet);
     });
 
     return unsubscribe;
@@ -117,6 +126,7 @@ const CreateCoin = ({navigation}) => {
               }}
               onBlur={() => {}}
               onEndEditing={() => {}}
+              value={userEmail}
             />
           </View>
         </View>
@@ -134,6 +144,7 @@ const CreateCoin = ({navigation}) => {
               }}
               onBlur={() => {}}
               onEndEditing={() => {}}
+              value={route.params.account ? route.params.account : ''}
             />
           </View>
         </View>
@@ -150,6 +161,7 @@ const CreateCoin = ({navigation}) => {
                 console.log(text);
               }}
               onBlur={() => {}}
+              value={userUID}
               onEndEditing={() => {}}
             />
             <Text style={styles.walletinputBtmTitle}>www.kliq.club/</Text>
@@ -159,7 +171,7 @@ const CreateCoin = ({navigation}) => {
           <View style={styles.doneBtnContainer}>
             <ImageButton
               title={'done'}
-              onPressNext={() => navigation.replace('Home')}
+              onPressNext={() => navigation.replace('Home', {account: route.params.account})}
             />
           </View>
         </View>

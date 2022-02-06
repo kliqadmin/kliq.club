@@ -1,128 +1,128 @@
-import React, { Component } from "react";
-import { Button, Card, Form, InputGroup } from "react-bootstrap";
-import Web3 from "web3";
-import FanProxyContract from "../contracts/FanProxy.json";
-import TransactionModal, { TransactionModalState } from "./TransactionModal";
-import { addresses } from "../addresses";
-import "./Fan.css";
+import React, { Component } from 'react'
+import { Button, Card, Form, InputGroup } from 'react-bootstrap'
+import Web3 from 'web3'
+import FanProxyContract from '../contracts/FanProxy.json'
+import TransactionModal, { TransactionModalState } from './TransactionModal'
+import { addresses } from '../addresses'
+import './Fan.css'
 
 class Fan extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
-      creatorAddress: "",
+      creatorAddress: '0x6C6548106f70F38cc94581d78298BD4F61B3b32d',
       amountValue: 0,
-      sentTransactionHash: "",
+      sentTransactionHash: '',
       transactionModalState: TransactionModalState.HIDDEN,
-    };
+    }
 
-    this.getEthAmount = this.getEthAmount.bind(this);
-    this.handleInputChange = this.handleInputChange.bind(this);
-    this.resetTransactionModal = this.resetTransactionModal.bind(this);
-    this.sendDonation = this.sendDonation.bind(this);
+    this.getEthAmount = this.getEthAmount.bind(this)
+    this.handleInputChange = this.handleInputChange.bind(this)
+    this.resetTransactionModal = this.resetTransactionModal.bind(this)
+    this.sendDonation = this.sendDonation.bind(this)
   }
 
   componentDidMount = async () => {
-    const creatorAddressFromUrl = this.props.match.params.creatorAddress;
+    const creatorAddressFromUrl = this.props.match.params.creatorAddress
     if (creatorAddressFromUrl) {
-      this.setState({ creatorAddress: creatorAddressFromUrl });
+      this.setState({ creatorAddress: creatorAddressFromUrl })
     }
-    await this.initContract();
-  };
+    await this.initContract()
+  }
 
   componentDidUpdate = async (prevProps) => {
     if (this.props.provider !== prevProps.provider) {
-      await this.initContract();
+      await this.initContract()
     }
-  };
+  }
 
   async initContract() {
-    const { provider } = this.props;
+    const { provider } = this.props
     if (!provider || this.state.contract) {
-      return;
+      return
     }
 
     try {
-      const web3 = new Web3(provider);
-      const networkId = await web3.eth.net.getId();
+      const web3 = new Web3(provider)
+      const networkId = await web3.eth.net.getId()
       const fanProxyAddress = addresses[networkId]
         ? addresses[networkId].fanProxy
-        : FanProxyContract.networks[networkId].address;
+        : FanProxyContract.networks[networkId].address
       const instance = new web3.eth.Contract(
         FanProxyContract.abi,
         fanProxyAddress
-      );
+      )
 
-      this.setState({ contract: instance });
+      this.setState({ contract: instance })
     } catch (error) {
       // Catch any errors for any of the above operations.
-      console.error(error);
+      console.error(error)
     }
   }
 
   handleInputChange(event) {
-    const target = event.target;
+    const target = event.target
     switch (target.name) {
-      case "creatorAddress":
-        this.setState({ creatorAddress: target.value });
-        break;
-      case "amountValue":
-        this.setState({ amountValue: Number.parseFloat(target.value) });
-        break;
+      case 'creatorAddress':
+        this.setState({ creatorAddress: target.value })
+        break
+      case 'amountValue':
+        this.setState({ amountValue: Number.parseFloat(target.value) })
+        break
       default:
     }
   }
 
   resetTransactionModal() {
     this.setState({
-      sentTransactionHash: "",
+      sentTransactionHash: '',
       transactionModalState: TransactionModalState.HIDDEN,
-    });
+    })
   }
 
   getEthAmount() {
-    return Web3.utils.toWei(this.state.amountValue.toString(), "ether");
+    return Web3.utils.toWei(this.state.amountValue.toString(), 'ether')
   }
 
   sendDonation(event) {
-    event.preventDefault();
+    event.preventDefault()
 
     try {
       this.state.contract.methods
         .swapAndDonateETH(this.state.creatorAddress)
         .send({ from: this.props.connectedWallet, value: this.getEthAmount() })
-        .once("transactionHash", (hash) => {
+        .once('transactionHash', (hash) => {
           this.setState({
             sentTransactionHash: hash,
             transactionModalState: TransactionModalState.AWAITING_CONFIRMATION,
-          });
+          })
         })
-        .once("receipt", () => {
+        .once('receipt', () => {
           this.setState({
             transactionModalState: TransactionModalState.CONFIRMED,
-          });
+          })
         })
-        .on("error", () => {
+        .on('error', () => {
           this.setState({
             transactionModalState: TransactionModalState.ERROR,
-          });
-        });
+          })
+        })
     } catch (error) {
-      console.log(`Error: ${error}`);
+      console.log(`Error: ${error}`)
     }
   }
 
   isValidAddress(address) {
     // TODO: Support ENS addresses.
-    return Web3.utils.isAddress(address);
+    return Web3.utils.isAddress(address)
   }
 
   isValidAmount(amount) {
-    return Number.isFinite(amount) && amount > 0.0;
+    return Number.isFinite(amount) && amount > 0.0
   }
 
   render() {
-    let button;
+    let button
 
     if (!this.props.connectedWallet) {
       button = (
@@ -136,11 +136,11 @@ class Fan extends Component {
         >
           Connect wallet
         </Button>
-      );
+      )
     } else {
       const disabled =
         !this.isValidAddress(this.state.creatorAddress) ||
-        !this.isValidAmount(this.state.amountValue);
+        !this.isValidAmount(this.state.amountValue)
       button = (
         <Button
           variant="success"
@@ -152,7 +152,7 @@ class Fan extends Component {
         >
           Send
         </Button>
-      );
+      )
     }
 
     return (
@@ -201,8 +201,8 @@ class Fan extends Component {
           onHide={this.resetTransactionModal}
         />
       </div>
-    );
+    )
   }
 }
 
-export default Fan;
+export default Fan

@@ -1,4 +1,4 @@
-import {getBaseURL, getImageURL} from './api-environments';
+import {getBaseURL} from './api-environments';
 
 const CREATOR = 'creator';
 const TRASACTIONS = 'transactions';
@@ -10,9 +10,9 @@ export function getLoginEndpoint() {
 }
 
 export function getDashboardDataEndPoint() {
-  return getImageURL() + `/${CREATOR}/${DASHBOARD}`;
+  return getBaseURL() + `/${CREATOR}/${DASHBOARD}`;
 }
 
 export function getTransactionsEndPoint() {
-  return getImageURL() + `/${CREATOR}/${TRASACTIONS}`;
+  return getBaseURL() + `/${CREATOR}/${TRASACTIONS}`;
 }

@@ -15,14 +15,12 @@ export function* DashboardDataWatcher() {
 
 export function* getDashboardData(action) {
   try {
-    debugger
     const result = yield call(() =>
       request(
         getDashboardDataEndPoint(),
         HTTP_METHODS.GET
       ),
     );
-    debugger
     if (result.response.status === 200) {
       action.payload.onSuccess(result.response.data);
       yield put(Action.DashboardDataSuccess(result.response.data));

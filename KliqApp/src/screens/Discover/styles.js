@@ -61,4 +61,30 @@ export const DiscoverStyles = StyleSheet.create({
     fontSize: 13,
     fontWeight: '600'
   },
+  yieldLbl: {
+    color: COLORS.black,
+    fontSize: 14,
+    fontWeight: '600'
+  },
+  receivedLbl: {
+    color: COLORS.white,
+    fontSize: 14,
+    fontWeight: '600'
+  },
+  receivedBtn: {
+    width: 98,
+    height: 29,
+    backgroundColor: '#9A9A9A',
+    marginRight: 5,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  yieldBtn: {
+    width: 98,
+    height: 29,
+    backgroundColor: '#2B2B2B',
+    marginLeft: 5,
+    justifyContent: 'center',
+    alignItems: 'center'
+  }
 });

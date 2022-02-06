@@ -12,6 +12,7 @@ import {Home, Scan} from '../screens';
 import {COLORS, icons} from '../constants';
 import Discover from '../screens/Discover';
 import Wallet from '../screens/Wallet';
+import { DiscoverStack } from './DiscoverStack';
 
 const Tab = createBottomTabNavigator();
 
@@ -116,7 +117,7 @@ const Tabs = () => {
       tabBar={(props) => <CustomTabBar props={props} />}>
       <Tab.Screen
         name="Home"
-        component={Discover}
+        component={DiscoverStack}
         options={{
           tabBarIcon: ({focused}) => (
             <Image

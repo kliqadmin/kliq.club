@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, SafeAreaView, TouchableOpacity, Image, TouchableHighlight } from 'react-native';
+import { View, Text, SafeAreaView, TouchableOpacity, Image, TouchableHighlight, ActivityIndicator } from 'react-native';
 import { useDispatch } from 'react-redux';
 import GradientText from '../../components/Common/GrText';
 import { CoinLineChart } from '../../components/Common/LineChart';
@@ -11,36 +11,68 @@ import { DiscoverStyles } from './styles';
 const Discover = ({ navigation }) => {
 
   const dispatch = useDispatch();
-  const [istoolTipVisible, settoolTipVisible] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   const [dashboardData, setDashboardData] = useState(undefined);
+
+  const [totalFunds, setTotalFunds] = useState(undefined);
+  const [yieldFund, setYieldFund] = useState(undefined);
+  const [kliqFund, setkliqFund] = useState(undefined);
 
   useEffect(() => {
     const data = {}
     dispatch(GetDashboardData({
       data,
-      onSuccess: res => setDashboardData(res),
+      onSuccess: res => {
+        setDashboardData(res);
+        console.log('dashboardData', res)
+        if (res && res.total_funds) {
+          const { total_funds, total_kliq_coins } = res;
+          setTotalFunds(total_funds);
+          setYieldFund(res.yield);
+          setkliqFund(total_kliq_coins);
+          setIsLoading(false);
+        }
+      },
       onError: err => console.log(err),
     }));
-    console.log('dashboardDatadashboardData', dashboardData)
-  }, [dashboardData])
-
+  }, [])
+  const totalEth = totalFunds !== undefined ? totalFunds.eth : 'NA';
+  const totalUSD = totalFunds !== undefined ? totalFunds.eth : 'NA';
+  const yieldEth = yieldFund !== undefined ? yieldFund.eth : 'NA';
+  const yieldUSD = yieldFund !== undefined ? yieldFund.dollars : 'NA';
+  const yieldPer = yieldFund !== undefined ? yieldFund.percentage : 'NA';
+  const kliqEth = kliqFund !== undefined ? kliqFund.eth : 'NA';
+  const kliqUSD = kliqFund !== undefined ? kliqFund.dollars : 'NA';
+  console.log('totalEthtotalEthtotalEth', totalEth)
   return (
     <SafeAreaView style={DiscoverStyles.wrapper}>
       <Text style={DiscoverStyles.toptitleStyle}>Wallet</Text>
-      <View style={{ flexDirection: 'row' }}>
+      {isLoading ? (<>
+      <View style={{marginTop: 150}}>
+      <ActivityIndicator
+          visible={true}
+          size={'large'}
+          textContent={'Loading...'}
+          textStyle={DiscoverStyles.lottie}
+        >
+        </ActivityIndicator>
+      </View>
+      </>) : (
+        <>
+          <View style={{ flexDirection: 'row' }}>
         <View style={{ width: '50%', height: 100, marginTop: 32, marginStart: 5 }}>
-          <Text style={DiscoverStyles.ethLbl}>300.13 ETH</Text>
+          <Text style={DiscoverStyles.ethLbl}>{`${totalEth}ETH`}</Text>
           <View style={{ flexDirection: 'row', alignItems: 'flex-end' }}>
-            <GradientText style={DiscoverStyles.totalAmount}>907,632</GradientText>
+            <GradientText style={DiscoverStyles.totalAmount}>{`${totalUSD}`}</GradientText>
             <Text style={DiscoverStyles.currencySym}>$</Text>
           </View>
           <Text style={DiscoverStyles.desc}>{'TOTAL' + '\n' + 'FUNDS'}</Text>
         </View>
         <View style={{ width: '50%', marginTop: 32, marginStart: 5 }}>
-          <Text style={DiscoverStyles.ethLbl}>300.13 ETH</Text>
+          <Text style={DiscoverStyles.ethLbl}>{`${yieldEth}ETH`}</Text>
           <View style={{ flexDirection: 'row', alignItems: 'flex-end' }}>
-            <GradientText style={DiscoverStyles.totalAmount}>313.321</GradientText>
+            <GradientText style={DiscoverStyles.totalAmount}>{`${yieldUSD}`}</GradientText>
             <Text style={DiscoverStyles.currencySym}>$</Text>
           </View>
           <View>
@@ -63,7 +95,7 @@ const Discover = ({ navigation }) => {
             </View>
             <View style={{ flexDirection: 'row' }}>
               <Text style={DiscoverStyles.descBtm}>
-                {'12.31%' + '\n'}
+                {`${yieldPer}%`}
               </Text>
               <Text style={DiscoverStyles.incLbl}>
                 {'+1.2%' + '\n'}
@@ -73,9 +105,9 @@ const Discover = ({ navigation }) => {
         </View>
       </View>
       <View style={{ width: '50%', height: 100, marginTop: 32, marginStart: 5 }}>
-          <Text style={DiscoverStyles.ethLbl}>20.12 ETH</Text>
+          <Text style={DiscoverStyles.ethLbl}>{`${kliqEth}ETH`}</Text>
           <View style={{ flexDirection: 'row', alignItems: 'flex-end' }}>
-            <GradientText style={DiscoverStyles.totalAmount}>21,212</GradientText>
+            <GradientText style={DiscoverStyles.totalAmount}>{`${kliqUSD}`}</GradientText>
             <Text style={DiscoverStyles.desc}>{'TOTAL KLIQ COINS'}</Text>
           </View>
         </View>
@@ -88,6 +120,9 @@ const Discover = ({ navigation }) => {
             </TouchableOpacity>
         </View>
         <CoinLineChart />
+        </>
+      )}
+
     </SafeAreaView>
   );
 };

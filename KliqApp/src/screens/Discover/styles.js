@@ -86,5 +86,8 @@ export const DiscoverStyles = StyleSheet.create({
     marginLeft: 5,
     justifyContent: 'center',
     alignItems: 'center'
-  }
+  },
+  lottie: {
+    color: '#FFF',
+  },
 });

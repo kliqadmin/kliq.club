@@ -3,10 +3,13 @@ import {TouchableOpacity, View, Image, Text, StyleSheet} from 'react-native';
 import {images} from '../../../constants';
 import styles from './styles';
 
-const ImageButton = ({title, isDisabled}) => {
+const ImageButton = ({title, isDisabled, onPressNext}) => {
   return (
     <View>
-      <TouchableOpacity style={styles.touchable} disabled={isDisabled}>
+      <TouchableOpacity
+        style={styles.touchable}
+        disabled={isDisabled}
+        onPress={onPressNext}>
         <Image
           source={images.btnBg}
           style={[

@@ -8,7 +8,7 @@ import {SocialConnectButton} from '../../components/Connect/Button';
 import {FONTS, images} from '../../constants';
 import {styles} from './styles';
 
-const ConnectWallet = ({navigation}) => {
+const CreateCoin = ({navigation}) => {
   const {createSession, killSession, session, signTransaction} =
     useWalletConnect();
   const hasWallet = !!session.length;
@@ -97,10 +97,9 @@ const ConnectWallet = ({navigation}) => {
     <SafeAreaView style={styles.wrapper}>
       <View style={styles.container}>
         <View style={styles.topTitleView}>
-          <Text style={styles.toptitleStyle}>Connect your channels</Text>
+          <Text style={styles.toptitleStyle}>Create your Kliq link</Text>
           <Text style={styles.toplblStyle}>
-            Connect your social media accounts which you are better infulenzed
-            on
+            Here you will create an unique address to receive or send crypto
           </Text>
         </View>
         <View style={styles.btnI}>
@@ -131,33 +130,11 @@ const ConnectWallet = ({navigation}) => {
             onPressConnect={() => onPressBtn('twitter', 2)}
           />
         </View>
-        <View style={styles.btnII}>
-          <SocialConnectButton
-            imgLeft={!instaCancel ? images.plus : images.cancel}
-            imgMain={images.insta}
-            imgRight={images.plus}
-            disabled={selectedMedia !== '' ? false : true}
-            onPressConnect={() => onPressBtn('instagram', 3)}
-          />
-        </View>
-        <View style={styles.madein}>
-          <Image
-            source={images.madein}
-            style={styles.madeinImg}
-            resizeMode={'center'}
-            width={'50%'}
-          />
-          <Text style={styles.madeinLbl}>MADE IN INDIA</Text>
-        </View>
         <View>
           <Text style={styles.bottomLbl}>
             Add atleast 1 CHANNEL to continue to the next step
           </Text>
-          <ImageButton
-            isDisabled={isBtnDisabled}
-            title={'next'}
-            onPressNext={() => navigation.navigate('CreateCoin')}
-          />
+          <ImageButton isDisabled={isBtnDisabled} title={'next'} />
         </View>
       </View>
       <Modal isVisible={isModalVisible}>
@@ -196,4 +173,4 @@ const ConnectWallet = ({navigation}) => {
   );
 };
 
-export default ConnectWallet;
+export default CreateCoin;

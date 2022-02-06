@@ -8,10 +8,14 @@ const SocialConnectButton = ({
   imgRight,
   isPressed,
   onPressConnect,
+  disabled,
 }) => {
   return (
     <View>
-      <Pressable style={styles.baseBtn} onPress={onPressConnect}>
+      <Pressable
+        style={styles.baseBtn}
+        onPress={onPressConnect}
+        disabled={disabled}>
         <View style={styles.btnContainer}>
           <Image source={imgLeft} style={styles.imgLeft} />
           <Image

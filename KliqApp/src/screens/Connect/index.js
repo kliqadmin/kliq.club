@@ -156,7 +156,14 @@ const ConnectWallet = ({navigation}) => {
           <ImageButton
             isDisabled={isBtnDisabled}
             title={'next'}
-            onPressNext={() => navigation.navigate('CreateCoin')}
+            onPressNext={() => {
+              setIsBtnDisabled(true);
+              setonlyFanCancel(false);
+              setyoutubeCancel(false);
+              settwitterCancel(false);
+              setinstaCancel(false);
+              navigation.navigate('CreateCoin');
+            }}
           />
         </View>
       </View>

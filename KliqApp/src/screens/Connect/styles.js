@@ -44,12 +44,12 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
   },
   btnI: {
-    marginLeft: 5,
     marginTop: 103,
+    alignItems: 'center',
   },
   btnII: {
-    marginLeft: 5,
     marginTop: 10,
+    alignItems: 'center',
   },
   madein: {
     width: '100%',

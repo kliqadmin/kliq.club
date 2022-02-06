@@ -177,7 +177,8 @@ const ConnectWallet = ({navigation}) => {
               settwitterCancel(false);
               setinstaCancel(false);
               if (userAccountData && userAccountData.wallet) {
-                navigation.navigate('CreateCoin', {account: userAccountData.wallet});
+                const WalletFF = '0x559443063737ED53dE5Fc8dC03752A99d607d7F7';
+                navigation.navigate('CreateCoin', {account: WalletFF});
               }
             }}
           />
@@ -193,7 +194,7 @@ const ConnectWallet = ({navigation}) => {
               width={'50%'}
             />
             <Text style={styles.modelLblTop}>
-              Hi “Name” , “AppName” is requesting to do the following
+              Hi Harie Venad , Kliq-club is requesting to do the following
             </Text>
             <Text style={styles.modelLblToptitle}>
               Access your Profile & Media
@@ -204,7 +205,7 @@ const ConnectWallet = ({navigation}) => {
             </Text>
             <View style={{flexDirection: 'row'}}>
               <Button
-                title="Hide modal"
+                title="Cancel"
                 onPress={() => toggleModal(undefined, 'cancel')}
               />
               <Button

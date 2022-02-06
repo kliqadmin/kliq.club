@@ -108,7 +108,7 @@ const Discover = ({ navigation }) => {
           <Text style={DiscoverStyles.ethLbl}>{`${kliqEth}ETH`}</Text>
           <View style={{ flexDirection: 'row', alignItems: 'flex-end' }}>
             <GradientText style={DiscoverStyles.totalAmount}>{`${kliqUSD}`}</GradientText>
-            <Text style={DiscoverStyles.desc}>{'TOTAL KLIQ COINS'}</Text>
+            <Text style={DiscoverStyles.desc}>{'KLIQ COINS'}</Text>
           </View>
         </View>
         <View style={{flexDirection: 'row', justifyContent: 'center', width: '100%', marginBottom: 10}}>

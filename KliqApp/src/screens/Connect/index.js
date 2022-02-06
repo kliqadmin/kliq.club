@@ -1,26 +1,35 @@
-import React, {Component, useCallback, useEffect, useState} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import {View, Text, SafeAreaView, Pressable, Image, Button} from 'react-native';
 import {useWalletConnect} from 'react-native-walletconnect';
+import { useDispatch } from 'react-redux';
 import Modal from 'react-native-modal';
-import GradientText from '../../components/Common/GrText';
 import {ImageButton} from '../../components/Common/ImageButton';
 import {SocialConnectButton} from '../../components/Connect/Button';
-import {FONTS, images} from '../../constants';
+import {images} from '../../constants';
+
 import {styles} from './styles';
+import { GetAccountData } from './redux/actions';
+
 
 const ConnectWallet = ({navigation}) => {
+  const dispatch = useDispatch();
   const {createSession, killSession, session, signTransaction} =
     useWalletConnect();
   const hasWallet = !!session.length;
   const [isBtnDisabled, setIsBtnDisabled] = useState(true);
   const [selectedIndex, setSelectedIndex] = useState(undefined);
   const [selectedMedia, setSelectedMedia] = useState(undefined);
+
   const [isModalVisible, setModalVisible] = useState(false);
   const [onlyFanCancel, setonlyFanCancel] = useState(false);
   const [youtubeCancel, setyoutubeCancel] = useState(false);
+
   const [twitterCancel, settwitterCancel] = useState(false);
   const [instaCancel, setinstaCancel] = useState(false);
   const [proceedSelected, setproceedSelected] = useState(false);
+
+  const [userAccountData, setuserAccountData] = useState({});
+
   useEffect(() => {
     const unsubscribe = navigation.addListener('focus', () => {
       console.log('HasssssWaallettt', hasWallet);
@@ -44,7 +53,6 @@ const ConnectWallet = ({navigation}) => {
     },
     [isBtnDisabled, selectedIndex, setCancelButtonStatus, toggleModal],
   );
-
   const setCancelButtonStatus = useCallback(
     (media) => {
       switch (media) {
@@ -88,6 +96,12 @@ const ConnectWallet = ({navigation}) => {
         setIsBtnDisabled(false);
         setproceedSelected(true);
         setSelectedMedia(media);
+        const data = {}
+        dispatch(GetAccountData({
+          data,
+          onSuccess: res => setuserAccountData(res),
+          onError: err => console.log(err),
+        }));
       }
     },
     [isModalVisible, selectedMedia, setCancelButtonStatus],
@@ -162,7 +176,9 @@ const ConnectWallet = ({navigation}) => {
               setyoutubeCancel(false);
               settwitterCancel(false);
               setinstaCancel(false);
-              navigation.navigate('CreateCoin');
+              if (userAccountData && userAccountData.wallet) {
+                navigation.navigate('CreateCoin', {account: userAccountData.wallet});
+              }
             }}
           />
         </View>

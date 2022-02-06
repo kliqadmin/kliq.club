@@ -100,4 +100,57 @@ export const styles = StyleSheet.create({
     // paddingHorizontal: 20,
     color: COLORS.black,
   },
+  textInputContainer: {
+    width: '100%',
+    marginTop: 70,
+    marginLeft: 20,
+  },
+  inputTitle: {
+    color: COLORS.white,
+    fontSize: 18,
+  },
+  inputWrapper: {
+    width: '91%',
+    height: 40,
+    marginHorizontal: 10,
+    marginTop: 8,
+    marginLeft: 5,
+  },
+  inputStyle: {
+    paddingLeft: 15,
+    height: '100%',
+    borderWidth: 1,
+    borderRadius: 4,
+    borderColor: COLORS.inputBorder,
+    color: '#fff',
+  },
+  walletinputStyle: {
+    paddingLeft: 15,
+    height: '100%',
+    borderWidth: 1,
+    borderRadius: 4,
+    backgroundColor: '#2B2B2B',
+    borderColor: COLORS.inputBorder,
+    color: '#fff',
+  },
+  idTextInputContainer: {
+    width: '100%',
+    marginTop: 30,
+    marginLeft: 20,
+  },
+  walletinputBtmTitle: {
+    color: COLORS.white,
+    marginTop: 5,
+    fontSize: 14,
+    textAlign: 'center',
+  },
+  doneBtnWrapper: {
+    bottom: -130,
+    width: '100%',
+    height: '30%',
+    alignItems: 'center',
+  },
+  doneBtnContainer: {
+    marginTop: 10,
+  },
 });

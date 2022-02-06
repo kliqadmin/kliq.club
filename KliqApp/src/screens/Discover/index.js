@@ -1,13 +1,30 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { View, Text, SafeAreaView, TouchableOpacity, Image, TouchableHighlight } from 'react-native';
+import { useDispatch } from 'react-redux';
 import GradientText from '../../components/Common/GrText';
 import { CoinLineChart } from '../../components/Common/LineChart';
 import { COLORS, icons } from '../../constants';
+import { GetDashboardData } from './redux/actions';
 
 import { DiscoverStyles } from './styles';
 
 const Discover = ({ navigation }) => {
-  const [istoolTipVisible, settoolTipVisible] = useState(false)
+
+  const dispatch = useDispatch();
+  const [istoolTipVisible, settoolTipVisible] = useState(false);
+
+  const [dashboardData, setDashboardData] = useState(undefined);
+
+  useEffect(() => {
+    const data = {}
+    dispatch(GetDashboardData({
+      data,
+      onSuccess: res => setDashboardData(res),
+      onError: err => console.log(err),
+    }));
+    console.log('dashboardDatadashboardData', dashboardData)
+  }, [dashboardData])
+
   return (
     <SafeAreaView style={DiscoverStyles.wrapper}>
       <Text style={DiscoverStyles.toptitleStyle}>Wallet</Text>

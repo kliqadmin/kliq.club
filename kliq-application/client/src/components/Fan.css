@@ -10,3 +10,11 @@
 .support-form {
   margin-top: 16px;
 }
+
+.outline-kbtn {
+  border-color: '#A95BEB';
+}
+
+.outline-kbtn:hover {
+  border-color: blueviolet;
+}

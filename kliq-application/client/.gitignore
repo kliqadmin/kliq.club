@@ -9,7 +9,7 @@
 /coverage
 
 # truffle-compiled contracts
-/src/contracts
+# /src/contracts
 
 # production
 /build

@@ -1,10 +1,5 @@
 # kliq.club
-Kliq gives creators and their communities a mobile first platform to create their own digital economy and grow together.
-
-
-[![N|Solid](https://web3.ethglobal.com/assets/images/powered.svg)](http://kliq.club)
-
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
+Kliq gives creators and their communities a mobile first platform to create their own digital economy and grow together. As a creator, you can create your kliq account and start receiving funds. You will earn yields for the funds as well as free kliq tokens to be shared with the community. Kliq has no costs involved, doesn't require any crypto knowledge, and works flawlessly on mobile. Creators and their communities may cooperate in ways they never imagined possible with kliq, resulting in deeper, more meaningful connections.
 
 # Background
 Web3 creates network effects say it is ENS community, NFT communities or DAOs. It creates borderless communities and allows inclusiveness in its structure. If you leave Instagram, Twitter or Tiktok today, you are going to leave your whole network of followers with the platform. Web3 changes this to take your network forward even if you want to leave the platform. We have built a solution to onboard web2 users into the web3 world without much hassle. 
@@ -13,6 +8,7 @@ kliq.club enables creators or freelancers to create and manage their own communi
 
 # How do you create your kliq club?
 Create your own kliq club to enable transactions, access, and more innovative economic solutions directly on your mobile with zero knowledge on blockchain. 
+
 
 1. Create your own kliq club
 Onboarding creators with no prior technical knowledge and setup quick provisions to receive their funds into their own wallets. 
@@ -25,6 +21,8 @@ When your community holds kliq coin or your NFTs, provide them access to special
 
 # How kliq works?
  Creators who wants to get paid, can subscribe with the platform oAuth where they have their fan base and get a unique URL to get paid in Crypto. The creator will share the unique kliq URL on their social media. The followers will pay by scannning the QR code from their crypto currency exchange apps in the form of ETH or Matic. The crypto that the creator receives will be kept under kliq community pool where kliq will generate additional yield on behalf of the creator. 
+
+ ![How kliq works?](images/flow.png)
  
  Example:
  If a creator is paid $1000 worth of ETH,
@@ -37,8 +35,31 @@ When your community holds kliq coin or your NFTs, provide them access to special
     30% of the yield will be converted to kliq coins which can only be shared with your follower community. 
     20% of the yield will be kept under kliq treasury
 
-# Why kliq?
-Kliq has no costs involved, doesn't require any crypto knowledge, and works flawlessly on mobile. Creators and their communities may cooperate in ways they never imagined possible with kliq, resulting in deeper, more meaningful connections.
+# What is accomplished till now?
+
+* Smart contract strategy deployment with one DEX 
+* Backend to receive data from the mobile app & interact with polygon chain
+* Mobile app for the creators
+* Handling kliq coing generation and distribution strategy partially
+
+# The future
+
+* Adding multiple DEX for LP farming/Dual farming with optimised & guaranteed yield generation
+* Adding security layer on chain interaction & code audit
+* Handling kliq coin generation and distribute it to generate more yield
+* Handling liquidity when the number of creators grows in the network
+* Improve UI/UX for creators and followers
+
+
+# Credits
+
+Harie Venad [Twitter](https://twitter.com)| [Github](https://github.com/harievenad05) <br/>
+Prasanna Venkatraman [Twitter](https://twitter.com)| [Github](https://github.com/worldofprasanna) <br/>
+Pranav CB [Twitter](https://twitter.com)| [Github](https://github.com/) <br/>
+Karthikeyan NG [Twitter](https://twitter.com/intrepidkarthi)| [Github](https://github.com/intrepidkarthi) <br/>
+
+Made in India 
+
 
 
 

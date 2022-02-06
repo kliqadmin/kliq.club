@@ -62,6 +62,5 @@ Made in India
 
 
 
-[![N|Solid](images/polygon.png)](http://kliq.club) 
 
 

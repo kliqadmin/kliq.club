@@ -2,7 +2,7 @@
 Kliq gives creators and their communities a mobile first platform to create their own digital economy and grow together.
 
 
-[![N|Solid](https://web3.ethglobal.com/assets/images/powered.svg)](http://kliq.club)
+
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
@@ -40,6 +40,6 @@ When your community holds kliq coin or your NFTs, provide them access to special
 # Why kliq?
 Kliq has no costs involved, doesn't require any crypto knowledge, and works flawlessly on mobile. Creators and their communities may cooperate in ways they never imagined possible with kliq, resulting in deeper, more meaningful connections.
 
-
+[![N|Solid](https://web3.ethglobal.com/assets/images/powered.svg)](http://kliq.club) 
 
 

@@ -32,6 +32,8 @@ export const COLORS = {
   transparent: 'transparent',
   btnBG: '#141414',
   textGray: '#979797',
+
+  inputBorder: '#2B2B2B',
 };
 
 export const SIZES = {

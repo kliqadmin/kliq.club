@@ -1,5 +1,12 @@
 import React, {Component, useCallback, useEffect, useState} from 'react';
-import {View, Text, SafeAreaView, Pressable, Image, Button} from 'react-native';
+import {
+  View,
+  Text,
+  SafeAreaView,
+  Pressable,
+  Image,
+  TextInput,
+} from 'react-native';
 import {useWalletConnect} from 'react-native-walletconnect';
 import Modal from 'react-native-modal';
 import GradientText from '../../components/Common/GrText';
@@ -102,73 +109,64 @@ const CreateCoin = ({navigation}) => {
             Here you will create an unique address to receive or send crypto
           </Text>
         </View>
-        <View style={styles.btnI}>
-          <SocialConnectButton
-            imgLeft={!onlyFanCancel ? images.plus : images.cancel}
-            imgMain={images.onlyfans}
-            imgRight={images.plus}
-            isPressed={true}
-            disabled={selectedMedia !== '' ? false : true}
-            onPressConnect={() => onPressBtn('onlyfans', 0)}
-          />
-        </View>
-        <View style={styles.btnII}>
-          <SocialConnectButton
-            imgLeft={!youtubeCancel ? images.plus : images.cancel}
-            imgMain={images.youtube}
-            imgRight={images.plus}
-            disabled={selectedMedia !== '' ? false : true}
-            onPressConnect={() => onPressBtn('youtube', 1)}
-          />
-        </View>
-        <View style={styles.btnII}>
-          <SocialConnectButton
-            imgLeft={!twitterCancel ? images.plus : images.cancel}
-            imgMain={images.twitter}
-            imgRight={images.plus}
-            disabled={selectedMedia !== '' ? false : true}
-            onPressConnect={() => onPressBtn('twitter', 2)}
-          />
-        </View>
-        <View>
-          <Text style={styles.bottomLbl}>
-            Add atleast 1 CHANNEL to continue to the next step
-          </Text>
-          <ImageButton isDisabled={isBtnDisabled} title={'next'} />
-        </View>
-      </View>
-      <Modal isVisible={isModalVisible}>
-        <View style={styles.modelWrapper}>
-          <View style={styles.modelContainer}>
-            <Image
-              source={images.insta}
-              style={styles.modalLogoImg}
-              resizeMode={'center'}
-              width={'50%'}
+        <View style={styles.textInputContainer}>
+          <Text style={styles.inputTitle}>Email</Text>
+          <View style={styles.inputWrapper}>
+            <TextInput
+              placeholder="Email"
+              autoCapitalize={'none'}
+              autoCorrect={false}
+              placeholderTextColor={'#8888'}
+              style={styles.inputStyle}
+              onChangeText={(text) => {
+                console.log(text);
+              }}
+              onBlur={() => {}}
+              onEndEditing={() => {}}
             />
-            <Text style={styles.modelLblTop}>
-              Hi “Name” , “AppName” is requesting to do the following
-            </Text>
-            <Text style={styles.modelLblToptitle}>
-              Access your Profile & Media
-            </Text>
-            <Text style={styles.modelLblTop}>
-              User name and account type. Caption, Media counts, Media type,
-              Media URL, PermaLinks, Time stamp, Thumbnail.
-            </Text>
-            <View style={{flexDirection: 'row'}}>
-              <Button
-                title="Hide modal"
-                onPress={() => toggleModal(undefined, 'cancel')}
-              />
-              <Button
-                title="Proceed"
-                onPress={() => toggleModal(undefined, 'proceed')}
-              />
-            </View>
           </View>
         </View>
-      </Modal>
+        <View style={styles.textInputContainer}>
+          <Text style={styles.inputTitle}>Your Kliq wallet id</Text>
+          <View style={styles.inputWrapper}>
+            <TextInput
+              placeholder="Email"
+              autoCapitalize={'none'}
+              autoCorrect={false}
+              placeholderTextColor={'#8888'}
+              style={styles.walletinputStyle}
+              onChangeText={(text) => {
+                console.log(text);
+              }}
+              onBlur={() => {}}
+              onEndEditing={() => {}}
+            />
+          </View>
+        </View>
+        <View style={styles.idTextInputContainer}>
+          <Text style={styles.inputTitle}>Your Kliq wallet id</Text>
+          <View style={styles.inputWrapper}>
+            <TextInput
+              placeholder="Email"
+              autoCapitalize={'none'}
+              autoCorrect={false}
+              placeholderTextColor={'#8888'}
+              style={styles.walletinputStyle}
+              onChangeText={(text) => {
+                console.log(text);
+              }}
+              onBlur={() => {}}
+              onEndEditing={() => {}}
+            />
+            <Text style={styles.walletinputBtmTitle}>www.kliq.club/</Text>
+          </View>
+        </View>
+        <View style={styles.doneBtnWrapper}>
+          <View style={styles.doneBtnContainer}>
+            <ImageButton title={'done'} />
+          </View>
+        </View>
+      </View>
     </SafeAreaView>
   );
 };

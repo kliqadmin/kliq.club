@@ -36,14 +36,14 @@ When your community holds kliq coin or your NFTs, provide them access to special
     20% of the yield will be kept under kliq treasury
 
 # What is accomplished till now?
-***
+
 * Smart contract strategy deployment with one DEX 
 * Backend to receive data from the mobile app & interact with polygon chain
 * Mobile app for the creators
 * Handling kliq coing generation and distribution strategy partially
 
 # The future
-***
+
 * Adding multiple DEX for LP farming/Dual farming with optimised & guaranteed yield generation
 * Adding security layer on chain interaction & code audit
 * Handling kliq coin generation and distribute it to generate more yield
@@ -53,10 +53,10 @@ When your community holds kliq coin or your NFTs, provide them access to special
 
 # Credits
 
-Harie Venad [Twitter](https://twitter.com)| [Github](https://github.com/)
-Prasanna Venkatraman [Twitter](https://twitter.com)| [Github](https://github.com/)
-Pranav CB [Twitter](https://twitter.com)| [Github](https://github.com/)
-Karthikeyan NG [Twitter](https://twitter.com/intrepidkarthi)| [Github](https://github.com/intrepidkarthi)
+Harie Venad [Twitter](https://twitter.com)| [Github](https://github.com/harievenad05) <br/>
+Prasanna Venkatraman [Twitter](https://twitter.com)| [Github](https://github.com/worldofprasanna) <br/>
+Pranav CB [Twitter](https://twitter.com)| [Github](https://github.com/) <br/>
+Karthikeyan NG [Twitter](https://twitter.com/intrepidkarthi)| [Github](https://github.com/intrepidkarthi) <br/>
 
 Made in India 
 

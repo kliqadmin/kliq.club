@@ -1,9 +1,6 @@
 # kliq.club
 Kliq gives creators and their communities a mobile first platform to create their own digital economy and grow together.
 
-
-
-
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
 # Background
@@ -25,6 +22,8 @@ When your community holds kliq coin or your NFTs, provide them access to special
 
 # How kliq works?
  Creators who wants to get paid, can subscribe with the platform oAuth where they have their fan base and get a unique URL to get paid in Crypto. The creator will share the unique kliq URL on their social media. The followers will pay by scannning the QR code from their crypto currency exchange apps in the form of ETH or Matic. The crypto that the creator receives will be kept under kliq community pool where kliq will generate additional yield on behalf of the creator. 
+
+ ![How kliq works?](images/flow.png)
  
  Example:
  If a creator is paid $1000 worth of ETH,
